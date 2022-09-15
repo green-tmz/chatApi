@@ -1,0 +1,144 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Chat API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/chats": {
+            "get": {
+                "tags": [
+                    "Чаты"
+                ],
+                "summary": "Список чатов",
+                "description": "Получение списка всех чатов",
+                "operationId": "90d00c7e15d37a226e803f3b149b428d",
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/message/all": {
+            "get": {
+                "tags": [
+                    "Сообщения"
+                ],
+                "summary": "Вывод сообщений",
+                "description": "Вывод всех сообщений чата",
+                "operationId": "5c8c9febb9c273f867724ed0ee6011cc",
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "Количество сообщений",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "chatId",
+                        "in": "query",
+                        "description": "Id чата",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/message/add": {
+            "post": {
+                "tags": [
+                    "Сообщения"
+                ],
+                "summary": "Добавление сообщения",
+                "description": "Добавление сообщения в чат",
+                "operationId": "fb8eb3e424f44d64541acc40e83945ae",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "query",
+                        "description": "Id пользователя",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "chatId",
+                        "in": "query",
+                        "description": "Id чата",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Сообщение",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/message/delete": {
+            "delete": {
+                "tags": [
+                    "Сообщения"
+                ],
+                "summary": "Удаление сообщения",
+                "description": "Удаление сообщения из чата",
+                "operationId": "2051f3c5764c83501b0632364c896722",
+                "parameters": [
+                    {
+                        "name": "messageId",
+                        "in": "query",
+                        "description": "Id сообщения",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "Пользователи"
+                ],
+                "summary": "Список пользователей",
+                "description": "Получение списка всех пользователей",
+                "operationId": "c457726701591d1183b53aa71fc13441",
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        }
+    }
+}
